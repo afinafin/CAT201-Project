@@ -1,0 +1,112 @@
+package com.example.cat201try1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    /*
+    String name;
+    int age;
+    double height,weight;
+
+    */
+    EditText InputName;
+    EditText InputAge;
+    EditText InputHeight;
+    EditText InputWeight;
+
+    String[] gender = {"", "Male", "Female"};
+    Spinner InputGender;
+    int genderValue;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        setTitle("Home");
+
+        InputName = findViewById(R.id.UserName);
+        InputGender = findViewById(R.id.UserGender);
+        InputAge = findViewById(R.id.UserAge);
+        InputHeight = findViewById(R.id.UserHeight);
+        InputWeight = findViewById(R.id.UserWeight);
+
+        InputGender = findViewById(R.id.UserGender);
+        InputGender.setOnItemSelectedListener(this);
+
+        //Style and populate the spinner
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, gender);
+
+        //dropdown the spinner
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //attaching adapter to spinner
+        InputGender.setAdapter(adapter);
+
+
+        // source: https://www.youtube.com/watch?v=AD5qt7xoUU8
+        Button buttonOpenActivity2 = findViewById(R.id.SaveButton);
+        buttonOpenActivity2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((InputName.getText().toString().equals("")) ||
+                        (InputAge.getText().toString().equals("")) ||
+                        (InputAge.getText().toString().equals("")) ||
+                        (InputHeight.getText().toString().equals("")) ||
+                        (InputWeight.getText().toString().equals(""))) {
+                    Toast.makeText(MainActivity.this, "Please make sure you have selected and entered all inputs", Toast.LENGTH_SHORT).show();
+                } else {
+                    String userName = InputName.getText().toString();
+
+                    int userAge = Integer.parseInt(InputAge.getText().toString());
+                    Float userHeight = Float.parseFloat(InputHeight.getText().toString());
+                    Float userWeight = Float.parseFloat(InputWeight.getText().toString());
+
+
+                    Intent i = new Intent(MainActivity.this, InputDisplay.class);
+                    i.putExtra("NAME", userName);
+                    i.putExtra("AGE", userAge);
+                    i.putExtra("HEIGHT", userHeight);
+                    i.putExtra("WEIGHT", userWeight);
+                    i.putExtra("GENDER", genderValue);
+                    startActivity(i);
+                }
+
+            }
+
+        });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        if (gender[i] == "Male") {
+            genderValue = 9;
+        } else if (gender[i] == "Female") {
+            genderValue = 1;
+        } else
+            genderValue = 0;
+        Toast.makeText(getApplicationContext(), gender[i], Toast.LENGTH_SHORT).show();
+
+    }
+        @Override
+        public void onNothingSelected (AdapterView < ? > adapterView){
+
+        }
+
+
+
+}
