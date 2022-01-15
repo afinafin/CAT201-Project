@@ -1,0 +1,51 @@
+//Activity2
+package com.example.cat201try1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
+
+public class InputDisplay extends AppCompatActivity {
+
+    DecimalFormat decimalNum = new DecimalFormat(".00");
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_input_display);
+
+        Intent i = getIntent();
+        String name=i.getStringExtra("NAME");
+        int age=i.getIntExtra("AGE",0);
+        Float height=i.getFloatExtra("HEIGHT",0);
+        Float weight=i.getFloatExtra("WEIGHT", 0);
+        int genderValue=i.getIntExtra("GENDER", 0);
+        String setHeight = String.format("%1f", height);
+
+        TextView viewName= findViewById(R.id.NameView);
+        viewName.setText("Name:" +name);
+
+        TextView viewAge= findViewById(R.id.ageView);
+        viewAge.setText("Age:"+age);
+
+        TextView viewHeight= findViewById(R.id.heightView);
+        viewHeight.setText("Height:"+decimalNum.format(height));
+
+        TextView viewWeight= findViewById(R.id.weightView);
+        viewWeight.setText("Weight:"+decimalNum.format(weight));
+
+        TextView viewBMI = findViewById(R.id.BMIView);
+        viewBMI.setText("BMI:" + decimalNum.format(calculateBMI(height,weight)));
+
+        TextView viewGender = findViewById(R.id.GenderView);
+        viewGender.setText("Gender value:" + genderValue);
+
+    }
+
+    public float calculateBMI (Float h , Float w){
+        return w/(h/100)/(h/100);
+    }
+}
