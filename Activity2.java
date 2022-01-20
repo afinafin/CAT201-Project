@@ -22,7 +22,7 @@ public class Activity2 extends AppCompatActivity {
         SharedPreferences sp = getApplicationContext().getSharedPreferences("UserPrefs", MODE_PRIVATE);
 
         TextView calories = findViewById(R.id.CaloriesMaintain);
-        calories.setText(sp.getString("MAINTAIN","")+" calories");
+        calories.setText(sp.getInt("MAINTAIN",0)+" calories");
 
         buttonLoseWeight=findViewById(R.id.buttonLoseWeight);
         buttonLoseWeight.setOnClickListener(new View.OnClickListener() {
