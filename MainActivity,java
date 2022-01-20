@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
     public void saveData(String name, int age, Float height, Float weight, int gender)
     {
 
-        String caloriesMaintain=String.valueOf(calculateCaloriesMaintain(age,height,weight,gender));
-
+     
+        int caloriesMaintain = calculateCaloriesMaintain(age,height,weight,gender);
         SharedPreferences sp = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
         editor.putInt("GENDER", gender);
 
 
-        editor.putString("MAINTAIN",caloriesMaintain);
+        editor.putInt("MAINTAIN",caloriesMaintain);
         editor.commit();
 
         //display message about information is saved
