@@ -1,0 +1,5 @@
+1. UserLogin.java : User will login first then only proceed to 'MainActivity.java'
+2. MainAvtivity.java : User will enter all information, click 'SAVE' will save all data and proceed to 'WeightOption.java'
+3. WeightOption.java : User will choose either one option (maintain/gain/lose -> MaintainWeight.java/GainWeight.java/LoseWeight.java)
+
+//only calculation for Maintain is available, gain and lose not yet
