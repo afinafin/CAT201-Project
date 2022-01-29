@@ -92,8 +92,8 @@
 
     <Spinner
         android:id="@+id/genderSpinner"
-        android:layout_width="98dp"
-        android:layout_height="61dp"
+        android:layout_width="221dp"
+        android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.019"
