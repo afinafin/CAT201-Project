@@ -26,7 +26,7 @@
         android:id="@+id/UserNameLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="User Name"
@@ -59,7 +59,6 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="numberPassword"
-        android:drawableLeft="@drawable/ic_baseline_directions_run_24"
         android:drawablePadding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,3 +67,6 @@
         app:layout_constraintTop_toBottomOf="@+id/UserNameLogin"
         app:layout_constraintVertical_bias="0.19" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--        android:drawableLeft="@drawable/ic_baseline_directions_run_24"-->
+<!--    android:drawableLeft="@drawable/ic_baseline_person_24"-->
