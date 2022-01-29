@@ -1,4 +1,4 @@
-package com.example.jingchun;
+package com.example.cat201try2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements  AdapterView.OnItemSelectedListener{
 
     EditText InputName;
     EditText InputAge;
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         InputHeight = findViewById(R.id.UserHeight);
         InputWeight = findViewById(R.id.UserWeight);
         buttonSave = findViewById(R.id.UserSave);
-        buttonNext = findViewById(R.id.Activity2);
 
         InputGender.setOnItemSelectedListener(this);
 
@@ -62,10 +61,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 if ((InputName.getText().toString().equals("")) ||
                         (InputAge.getText().toString().equals("")) ||
-                        (InputHeight.getText().toString().equals("")) ||
-                        (InputWeight.getText().toString().equals(""))) {
+                        (InputWeight.getText().toString().equals("")) ||
+                        (InputHeight.getText().toString().equals(""))) {
                     Toast.makeText(MainActivity.this, "Please make sure you have selected and entered all inputs", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+                else {
                     userName = InputName.getText().toString();
                     userAge = Integer.parseInt(InputAge.getText().toString());
                     userHeight = Float.parseFloat(InputHeight.getText().toString());
@@ -73,21 +73,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     //call function to save data
                     saveData(userName,userAge,userHeight,userWeight,genderValue);
+
+                    Intent intent = new Intent(MainActivity.this, WeightOption.class);
+                    startActivity(intent);
                 }
-
-            }
-        });
-
-
-        buttonNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity2.class);
-                startActivity(intent);
             }
         });
     }
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -109,33 +101,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
    // https://gist.github.com/codinginflow/b4f4c0cb30dbc135129c89fa13c184a1
-   public void saveData(String name, int age, Float height, Float weight, int gender)
-   {
+    public void saveData(String name, int age, Float height, Float weight, int gender)
+    {
 
-       int caloriesMaintain = calculateCaloriesMaintain(age,height,weight,gender);
+        //String caloriesMaintain=String.valueOf(calculateCaloriesMaintain(age,height,weight,gender));
+        int caloriesMaintain = calculateCaloriesMaintain(age,height,weight,gender);
+        SharedPreferences sp = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
 
-       SharedPreferences sp = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-       SharedPreferences.Editor editor = sp.edit();
-
-       editor.clear();
-
+        editor.clear();
         editor.putString("NAME", name);
         editor.putFloat("AGE", age);
         editor.putFloat("HEIGHT", height);
         editor.putFloat("WEIGHT", weight);
         editor.putInt("GENDER", gender);
-        editor.putInt("CURRENT_MEAL", 0);
-        editor.putInt("CURRENT_EXERCISE", 0);
 
+        editor.putInt("GOAL", caloriesMaintain);
+        editor.putInt("MAINTAIN",caloriesMaintain);
+        editor.commit();
 
+        //display message about information is saved
+        Toast.makeText(MainActivity.this, "Information Saved:", Toast.LENGTH_SHORT).show();
 
-       editor.putInt("MAINTAIN",caloriesMaintain);
-       editor.commit();
-
-       //display message about information is saved
-       Toast.makeText(MainActivity.this, "Information Saved:", Toast.LENGTH_SHORT).show();
-
-   }
+    }
 
     //function to calculate calories maintain weight
     public int calculateCaloriesMaintain (int age, Float height, Float weight, int gender){

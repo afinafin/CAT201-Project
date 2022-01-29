@@ -1,4 +1,4 @@
-package com.example.jingchun;
+package com.example.cat201try2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +34,7 @@ public class UpdateExercise extends AppCompatActivity {
                 editor.putInt("BURN", burnCal);
                 editor.commit();
 
-                Intent intent = new Intent(UpdateExercise.this, Activity2.class);
+                Intent intent = new Intent(UpdateExercise.this, MainCalorieDisplay.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class UpdateExercise extends AppCompatActivity {
 
                 editor.putInt("BURN", 0);
                 editor.commit();
-                Intent intent = new Intent(UpdateExercise.this, Activity2.class);
+                Intent intent = new Intent(UpdateExercise.this, MainCalorieDisplay.class);
                 startActivity(intent);
             }
 

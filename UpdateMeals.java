@@ -1,4 +1,4 @@
-package com.example.jingchun;
+package com.example.cat201try2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 import android.widget.Spinner;
-
-import java.lang.reflect.Array;
 
 public  class UpdateMeals extends AppCompatActivity {
 
@@ -47,7 +45,7 @@ public  class UpdateMeals extends AppCompatActivity {
                 editor.putInt("INTAKE",saveData(state));
                 editor.commit();
 
-                Intent intent = new Intent(UpdateMeals.this, Activity2.class);
+                Intent intent = new Intent(UpdateMeals.this, MainCalorieDisplay.class);
                 startActivity(intent);
 
             }
@@ -59,7 +57,7 @@ public  class UpdateMeals extends AppCompatActivity {
 
                 editor.putInt("INTAKE",0);
                 editor.commit();
-                Intent intent = new Intent(UpdateMeals.this, Activity2.class);
+                Intent intent = new Intent(UpdateMeals.this, MainCalorieDisplay.class);
                 startActivity(intent);
             }
 
