@@ -109,14 +109,14 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
         SharedPreferences sp = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
-
+        editor.clear();
         editor.putString("NAME", name);
         editor.putFloat("AGE", age);
         editor.putFloat("HEIGHT", height);
         editor.putFloat("WEIGHT", weight);
         editor.putInt("GENDER", gender);
 
-
+        editor.putInt("GOAL", caloriesMaintain);
         editor.putInt("MAINTAIN",caloriesMaintain);
         editor.commit();
 

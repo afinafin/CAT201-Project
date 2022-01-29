@@ -21,16 +21,16 @@ public class GainWeight extends AppCompatActivity {
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("UserPrefs", MODE_PRIVATE);
 
-        TextView currentweightShow = findViewById(R.id.viewCurrentWeight1);
+        TextView currentWeightShow = findViewById(R.id.viewCurrentWeight);
         Float currentWeight = sp.getFloat("WEIGHT", 0);
-        currentweightShow.setText(currentWeight + "KG");
+        currentWeightShow.setText(currentWeight + "KG");
 
         TextView caloriesMaintain = findViewById(R.id.caloriesMaintainShow);
         caloriesMaintain.setText(sp.getInt("MAINTAIN", 0) + " calories");
 
 
 
-        Button calculate = findViewById(R.id.calculateLoseWeight1);
+        Button calculate = findViewById(R.id.calculate);
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

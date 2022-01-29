@@ -20,8 +20,9 @@ public class WeightOption extends AppCompatActivity {
         maintainWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(WeightOption.this,MaintainWeight.class);
-                startActivity(intent1);
+
+                Intent intent = new Intent(WeightOption.this, MainCalorieDisplay.class);
+                startActivity(intent);
             }
         });
 
@@ -31,6 +32,7 @@ public class WeightOption extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(WeightOption.this, LoseWeight.class);
                 startActivity(intent2);
+
             }
         });
 
