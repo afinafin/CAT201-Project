@@ -37,8 +37,9 @@ public class GainWeightChoice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int total = 300 + sp.getInt("MAINTAIN", 0);
-                editor.putInt("MAINTAIN", total);
+                int total = 200 + sp.getInt("MAINTAIN", 0);
+                editor.putInt("GOAL", total);
+                editor.putInt("WEIGHTTRIGGER",2);
                 editor.commit();
 
                 Intent intent = new Intent(GainWeightChoice.this, MainCalorieDisplay.class);
@@ -51,7 +52,8 @@ public class GainWeightChoice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int total = 500 + sp.getInt("MAINTAIN", 0);
-                editor.putInt("MAINTAIN", total);
+                editor.putInt("GOAL", total);
+                editor.putInt("WEIGHTTRIGGER",2);
                 editor.commit();
 
                 Intent intent = new Intent(GainWeightChoice.this, MainCalorieDisplay.class);
@@ -64,7 +66,8 @@ public class GainWeightChoice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int total = 700 + sp.getInt("MAINTAIN", 0);
-                editor.putInt("MAINTAIN", total);
+                editor.putInt("GOAL", total);
+                editor.putInt("WEIGHTTRIGGER",2);
                 editor.commit();
 
                 Intent intent = new Intent(GainWeightChoice.this, MainCalorieDisplay.class);
@@ -76,8 +79,9 @@ public class GainWeightChoice extends AppCompatActivity {
         increase4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int total = 100 + sp.getInt("MAINTAIN", 0);
-                editor.putInt("MAINTAIN", total);
+                int total = 1000 + sp.getInt("MAINTAIN", 0);
+                editor.putInt("GOAL", total);
+                editor.putInt("WEIGHTTRIGGER",2);
                 editor.commit();
 
                 Intent intent = new Intent(GainWeightChoice.this, MainCalorieDisplay.class);

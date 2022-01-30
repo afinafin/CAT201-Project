@@ -15,6 +15,7 @@ public class LoseWeightChoice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lose_weight_choice);
+        setTitle("Select Calories");
 
         SharedPreferences sp = getApplicationContext().getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
@@ -35,9 +36,10 @@ public class LoseWeightChoice extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int total = -300 + sp.getInt("MAINTAIN", 0);
+                int total = -200 + sp.getInt("MAINTAIN", 0);
 
                 editor.putInt("GOAL", minCalCheck(total));
+                editor.putInt("WEIGHTTRIGGER",3);
                 editor.commit();
 
                 Intent intent = new Intent(LoseWeightChoice.this, MainCalorieDisplay.class);
@@ -53,6 +55,7 @@ public class LoseWeightChoice extends AppCompatActivity {
 
 
                 editor.putInt("GOAL", minCalCheck(total));
+                editor.putInt("WEIGHTTRIGGER",3);
                 editor.commit();
 
                 Intent intent = new Intent(LoseWeightChoice.this, MainCalorieDisplay.class);
@@ -67,6 +70,7 @@ public class LoseWeightChoice extends AppCompatActivity {
                 int total = -700 + sp.getInt("MAINTAIN", 0);
 
                 editor.putInt("GOAL", minCalCheck(total));
+                editor.putInt("WEIGHTTRIGGER",3);
                 editor.commit();
 
                 Intent intent = new Intent(LoseWeightChoice.this, MainCalorieDisplay.class);
@@ -78,8 +82,9 @@ public class LoseWeightChoice extends AppCompatActivity {
         deficit44.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int total = -1100 + sp.getInt("MAINTAIN", 0);
+                int total = -1000 + sp.getInt("MAINTAIN", 0);
                 editor.putInt("GOAL", minCalCheck(total));
+                editor.putInt("WEIGHTTRIGGER",3);
                 editor.commit();
 
                 Intent intent = new Intent(LoseWeightChoice.this, MainCalorieDisplay.class);

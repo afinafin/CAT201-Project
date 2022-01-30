@@ -33,7 +33,8 @@ public class LoseWeight extends AppCompatActivity {
         Float currentWeight = sp.getFloat("WEIGHT", 0);
         currentWeightShow.setText(currentWeight + "KG");
 
-
+        TextView caloriesMaintain = findViewById(R.id.caloriesMaintainShow);
+        caloriesMaintain.setText(sp.getInt("MAINTAIN", 0) + " calories");
 
 //        TextView result = findViewById(R.id.result);
 
