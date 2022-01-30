@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cat201try2">
+        <activity 
+            android:name=".FullScreen" 
+            android:screenOrientation="landscape" />
         <activity
             android:name=".UserLogin"
             android:exported="false" />
