@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/p1"
     tools:context=".MaintainWeight">
 
     <TextView
         android:id="@+id/CaloriesInfo"
-        android:layout_width="293dp"
-        android:layout_height="92dp"
-        android:fontFamily="serif-monospace"
+        android:layout_width="311dp"
+        android:layout_height="95dp"
+        android:fontFamily="@font/averia_serif_libre"
         android:text="Calories needed to maintain your weight:"
         android:textAlignment="center"
-        android:textColor="#050505"
+        android:textAllCaps="true"
+        android:textColor="@color/words"
         android:textColorHint="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -21,26 +23,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:layout_constraintVertical_bias="0.251" />
 
-<TextView
-android:id="@+id/CaloriesMaintain"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="Calories"
-android:textSize="34sp"
-android:textStyle="bold"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintHorizontal_bias="0.498"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toBottomOf="@+id/CaloriesInfo"
-app:layout_constraintVertical_bias="0.093" />
+    <TextView
+        android:id="@+id/CaloriesMaintain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CaloriesInfo"
+        app:layout_constraintVertical_bias="0.093" />
 
     <Button
         android:id="@+id/buttonNext2"
         android:layout_width="133dp"
         android:layout_height="58dp"
+        android:backgroundTint="@color/teal_700"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
