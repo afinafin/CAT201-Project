@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cat201try2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cat201try2">
+        <activity
+            android:name=".UserLogin"
+            android:exported="false" />
+        <activity
+            android:name=".FullScreen"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".WatchVideo"
+            android:exported="true" />
         <activity
             android:name=".LoseWeightChoice"
             android:exported="false" />
@@ -40,7 +51,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".UserLogin"
+            android:name=".WelcomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -43,6 +43,7 @@ public  class UpdateMeals extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), state + " is selected", Toast.LENGTH_SHORT).show();
 
                 editor.putInt("INTAKE",saveData(state));
+                editor.putInt("BURN",0);
                 editor.commit();
 
                 Intent intent = new Intent(UpdateMeals.this, MainCalorieDisplay.class);
@@ -56,6 +57,7 @@ public  class UpdateMeals extends AppCompatActivity {
             public void onClick(View view) {
 
                 editor.putInt("INTAKE",0);
+                editor.putInt("BURN",0);
                 editor.commit();
                 Intent intent = new Intent(UpdateMeals.this, MainCalorieDisplay.class);
                 startActivity(intent);

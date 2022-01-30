@@ -6,13 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".UpdateExercise">
 
-    <TextView
-        android:id="@+id/textView2"
+
+    <EditText
+        android:id="@+id/burnInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Exercise"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:hint="Update Calorie Burn From Any Exercise"
+        app:layout_constraintBottom_toTopOf="@+id/cancelExercise"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299" />
 
     <Button
         android:id="@+id/saveExercise"
@@ -23,18 +28,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/burnInput"
         app:layout_constraintVertical_bias="0.298" />
 
     <Button
         android:id="@+id/cancelExercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="156dp"
         android:text="cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/watchVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="watch video"
+        app:layout_constraintBottom_toTopOf="@+id/cancelExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saveExercise"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.567" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+

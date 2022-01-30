@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
         SharedPreferences sp = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
-        editor.clear();
         editor.putString("NAME", name);
         editor.putFloat("AGE", age);
         editor.putFloat("HEIGHT", height);
@@ -121,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
         editor.commit();
 
         //display message about information is saved
-        Toast.makeText(MainActivity.this, "Information Saved:", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "Information Saved", Toast.LENGTH_SHORT).show();
 
     }
 

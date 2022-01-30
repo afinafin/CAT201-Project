@@ -7,12 +7,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class UpdateExercise extends AppCompatActivity {
 
     //initialize just to check calculation working or not
-    int burnCal=89;
-    Button exerciseSaveBtn, exerciseCancelBtn;
+    int burnCal;
+    Button exerciseSaveBtn, exerciseCancelBtn, watchVideo;
+    EditText updateCalBurn;
 
 
     @Override
@@ -26,12 +28,18 @@ public class UpdateExercise extends AppCompatActivity {
 
         exerciseSaveBtn = findViewById(R.id.saveExercise);
         exerciseCancelBtn = findViewById(R.id.cancelExercise);
+        watchVideo = findViewById(R.id.watchVideo);
+        updateCalBurn = findViewById(R.id.burnInput);
+
 
         exerciseSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                burnCal = Integer.parseInt(updateCalBurn.getText().toString());
+
                 editor.putInt("BURN", burnCal);
+                editor.putInt("INTAKE",0);
                 editor.commit();
 
                 Intent intent = new Intent(UpdateExercise.this, MainCalorieDisplay.class);
@@ -39,11 +47,22 @@ public class UpdateExercise extends AppCompatActivity {
             }
         });
 
+        watchVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(UpdateExercise.this, WatchVideo.class);
+                startActivity(intent);
+            }
+
+        });
+
         exerciseCancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 editor.putInt("BURN", 0);
+                editor.putInt("INTAKE",0);
                 editor.commit();
                 Intent intent = new Intent(UpdateExercise.this, MainCalorieDisplay.class);
                 startActivity(intent);

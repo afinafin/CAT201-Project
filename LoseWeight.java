@@ -33,15 +33,10 @@ public class LoseWeight extends AppCompatActivity {
         Float currentWeight = sp.getFloat("WEIGHT", 0);
         currentWeightShow.setText(currentWeight + "KG");
 
+        TextView caloriesMaintain = findViewById(R.id.caloriesMaintainShow);
+        caloriesMaintain.setText(sp.getInt("MAINTAIN", 0) + " calories");
 
 
-//        TextView result = findViewById(R.id.result);
-
-//        old method spinner weight
-//        Spinner optionWeight = (Spinner) findViewById(R.id.spinner);
-//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.recWeight));
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        optionWeight.setAdapter(adapter);
 
         Button calc = findViewById(R.id.calculate);
         calc.setOnClickListener(new View.OnClickListener(){
@@ -62,16 +57,7 @@ public class LoseWeight extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-                //old method lose weight calc
-//                option = optionWeight.getSelectedItemPosition();
-//
-//                tdee = sp.getInt("MAINTAIN",0);
-//                editor.putInt("MAINTAIN",kiraKal(option, tdee));
-//                editor.commit();
-//
-//                Intent intent1 = new Intent(LoseWeight.this, Activity2.class);
-//                startActivity(intent1);
-//                result.setText((int) option + " ");
+
             }
         });
 
@@ -86,28 +72,6 @@ public class LoseWeight extends AppCompatActivity {
             editor.commit();
         }
 
-//    old method calc
-//    public int kiraKal(int input, int cal){
-//        int result;
-//
-//        if (input == 0){
-//            result = cal - 350;
-//        }
-//        else if (input == 1){
-//            result = cal - 500;
-//        }
-//        else if (input == 2){
-//            result = cal - 850;
-//        }
-//        else
-//            result = cal - 1100;
-//
-//        if(result <=1200){
-//            result = 1200;
-//        }
-//
-//        return result;
-//    };
 
 
 

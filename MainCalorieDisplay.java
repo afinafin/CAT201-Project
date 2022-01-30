@@ -14,7 +14,6 @@ public class MainCalorieDisplay extends AppCompatActivity {
     TextView calories, intake, burn, remaining;
     int cal, intakeCal, srcIntake, currentIntake, burnCal, srcBurn, currentBurn, remainCal;
     Button buttonMeals, buttonExercise;
-
     SharedPreferences sp;
 
     @Override
