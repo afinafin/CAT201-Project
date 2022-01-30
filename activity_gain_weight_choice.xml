@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/p1"
     tools:context=".GainWeightChoice">
 
     <Button
         android:id="@+id/increase4"
         android:layout_width="302dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/teal_700"
         android:text="Increase 1000 calories per day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,68 +22,72 @@
 
     <TextView
         android:id="@+id/textViewCurrent"
-        android:layout_width="388dp"
-        android:layout_height="49dp"
+        android:layout_width="366dp"
+        android:layout_height="46dp"
         android:hint="Current Weight"
+        android:textAlignment="textStart"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.127" />
 
     <TextView
         android:id="@+id/textViewGain"
-        android:layout_width="388dp"
-        android:layout_height="49dp"
+        android:layout_width="367dp"
+        android:layout_height="50dp"
         android:hint="Target Gain Weight"
+        android:textAlignment="textStart"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.695"
+        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCurrent"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/textViewGain2"
-        android:layout_width="380dp"
-        android:layout_height="103dp"
+        android:layout_width="376dp"
+        android:layout_height="62dp"
         android:hint="Target Gain Weight"
         android:text="Please select one of the following option to achieve your target weight:"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="24sp"
+        android:textColor="@color/words"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGain"
-        app:layout_constraintVertical_bias="0.184" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.455" />
 
     <Button
         android:id="@+id/increase1"
         android:layout_width="302dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
+        android:backgroundTint="@color/teal_700"
         android:text="Increase 200 calories per day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGain2"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/increase2"
         android:layout_width="302dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/teal_700"
         android:text="Increase 500 calories per day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +100,7 @@
         android:id="@+id/increase3"
         android:layout_width="302dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/teal_700"
         android:text="Increase 700 calories per day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,4 +108,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/increase2"
         app:layout_constraintVertical_bias="0.155" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/averia_serif_libre"
+        android:text="USER DETAILS:"
+        android:textColor="@color/words"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/averia_serif_libre"
+        android:text="WEIGHT PROGRESS"
+        android:textColor="@color/words"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
 </androidx.constraintlayout.widget.ConstraintLayout>
