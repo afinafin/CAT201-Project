@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">jingchun</string>
+
+    <string-array name="meals">
+        <item>Nasi Lemak</item>
+        <item>Half Boiled Egg</item>
+        <item>Chicken Salad</item>
+        <item>Spaghetti Bolognese</item>
+        <item>Chicken Breast Grilled</item>
+        <item>White Gardenia(2 slices)</item>
+    </string-array>
+
+    <string-array name="recWeight">
+        <item>0.25</item>
+        <item>0.50</item>
+        <item>0.75</item>
+        <item>1.00</item>
+    </string-array>
+
+
+</resources>
