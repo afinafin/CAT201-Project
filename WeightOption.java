@@ -26,7 +26,7 @@ public class WeightOption extends AppCompatActivity {
 
                 editor.putInt("WEIGHTTRIGGER",1);
                 editor.commit();
-                Intent intent = new Intent(WeightOption.this, MainCalorieDisplay.class);
+                Intent intent = new Intent(WeightOption.this, MaintainWeight.class);
                 startActivity(intent);
             }
         });
